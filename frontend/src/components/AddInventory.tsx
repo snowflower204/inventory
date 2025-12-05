@@ -142,5 +142,42 @@ const AddInventory: React.FC<AddInventoryProps> = ({ onAdded }) => {
     </form>
   );
 };
+const styles: { [key: string]: React.CSSProperties } = {
+  form: {
+    backgroundColor: "#ffffff",
+    padding: "20px",
+    borderRadius: "8px",
+    boxShadow: "0px 2px 6px rgba(0,0,0,0.1)",
+    maxWidth: "400px",
+    margin: "20px auto",
+    fontFamily: "Roboto, sans-serif"
+  },
+  heading: {
+    color: "#0d47a1",
+    marginBottom: "16px",
+    textAlign: "center"
+  },
+  input: {
+    width: "100%",
+    padding: "10px",
+    marginBottom: "12px",
+    border: "1px solid #ccc",
+    borderRadius: "6px",
+    fontFamily: "Roboto, sans-serif"
+  },
+  button: {
+    width: "100%",
+    backgroundColor: "#1976d2",
+    color: "#fff",
+    border: "none",
+    padding: "12px",
+    borderRadius: "6px",
+    cursor: "pointer",
+    fontWeight: 500
+  }
+};
+
+
+
 
 export default AddInventory;
