@@ -1,10 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
-import dotenv from "dotenv";
 import cors from "cors";
-import Inventory from "./models/Inventory.js"; 
-
-dotenv.config();
+import Inventory from "./models/Inventory.js";
 
 const app = express();
 
@@ -37,7 +34,6 @@ app.post("/api/inventory", async (req, res) => {
   try {
     const { name, description, quantity, status } = req.body;
 
-    // Basic validation
     if (!name || !description) {
       return res.status(400).json({
         success: false,
@@ -80,13 +76,9 @@ app.delete("/api/inventory/:id", async (req, res) => {
 });
 
 // DB connection + server start
-const PORT = process.env.PORT || 4000;
-const MONGO_URI = process.env.MONGO_URI;
-
-if (!MONGO_URI) {
-  console.error("Missing MONGO_URI in .env");
-  process.exit(1);
-}
+const PORT = 4000;
+const MONGO_URI =
+  "mongodb+srv://hannah_db_user:hontiveros@inventory.gx8s9pn.mongodb.net/inventory?retryWrites=true&w=majority";
 
 mongoose
   .connect(MONGO_URI)
